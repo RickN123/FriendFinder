@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="icon-facebook"></span> Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">Survey Provided</h2>
+            <br>
+
+            <div class="text-center">
+                <a href="/survey"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Survey
+                        Results</button></a>
+                <a href="/survey"><button type="button" class="btn btn-default btn-lg"><i
+                            class="fas fa-home"></i></button></a>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <strong>Survey Questions</strong></h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name"><strong>About You</strong></label>
+                        <input type="name" class="form-control" id="name" aria-describedby="nameHelp"
+                            placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><strong>Link to Photo Image</strong></label>
+                        <input type="number" class="form-control" id="phone" aria-describedby="phoneHelp"
+                            placeholder="Enter your image address">
+                    </div>
+
+
+                    <button type="submit" id="add-btn" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/survey">API Survey Link</a> | <a href="/api/G">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript">
+
+        $("#add-btn").on("click", function (event) {
+            event.preventDefault();
+            var newFriend = {
+                name: $("#name").val().trim(),
+                phone: $("#phone").val().trim(),
+                email: $("#email").val().trim(),
+                uniqueId: $("#unique-id").val().trim()
+            }
+
+
+    </script>
+
+</body>
+
+</html>
