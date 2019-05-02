@@ -19,9 +19,9 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center"><span class="icon-facebook"></span> Friend Finder</h1>
+            <h1 class="text-left"><span class="icon-facebook"></span> Friend Finder</h1>
             <hr>
-            <h2 class="text-center">Survey Provided</h2>
+            <h2 class="text-left">Survey Provided</h2>
             <br>
 
             <div class="text-center">
@@ -39,6 +39,17 @@
             </div>
             <div class="card-body">
                 <form>
+                    <div class="Name">
+                        <label for="Name"><strong>Name</strong></label>
+                        <input type="text" class="form-control" id="name" aria-describedby="phoneHelp"
+                            placeholder="Enter your full name">
+                    </div>
+                    <div class="Image">
+                        <label for="Image"><strong>Link to Photo Image</strong></label>
+                        <input type="text" class="form-control" id="image" aria-describedby="phoneHelp"
+                            placeholder="Enter your image address">
+                    </div>
+
                     <div class="Q1">
                         <label for="name"><strong>You love driving to the shore</strong></label>
                         <select class="form-control">
@@ -151,11 +162,6 @@
                         </select>
                     </div>
                     <br>
-                    <div class="form-group">
-                        <label for="phone"><strong>Link to Photo Image</strong></label>
-                        <input type="number" class="form-control" id="phone" aria-describedby="phoneHelp"
-                            placeholder="Enter your image address">
-                    </div>
 
 
                     <button type="submit" id="add-btn" class="btn btn-primary">Submit</button>
@@ -176,12 +182,21 @@
 
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
+
             var newFriend = {
                 name: $("#name").val().trim(),
-                phone: $("#phone").val().trim(),
-                email: $("#email").val().trim(),
-                uniqueId: $("#unique-id").val().trim()
-            }
+                image: $("#image").val().trim(),
+                Q1: $("#unique-id").val().trim(),
+                Q2: $("#unique-id").val().trim()
+
+            };
+
+            $.post("/api/survey", newFriend)
+                .then(function (data) {
+
+                    alert("New Friend Added!");
+
+                }
 
 
     </script>
