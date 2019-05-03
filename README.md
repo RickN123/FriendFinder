@@ -25,6 +25,6 @@ Express, Javascript, Node
 
 
 ## Heroku Link
-https://sheltered-plains-85162.herokuapp.com/ | https://git.heroku.com/sheltered-plains-85162.git
+https://sheltered-plains-85162.herokuapp.com/
 
 Thank you for your time!
