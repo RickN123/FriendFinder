@@ -1,23 +1,29 @@
 var surveyData = require("../data/friends.js");
-var express = require("express");
-var path = require("path");
-var app = express();
+// var express = require("express");
+// var path = require("path");
+// var app = express();
 
 
-
+var friends = [];
 
 
 module.exports = function (app) {
-    app.get("/api/survey", function (req, res) {
-        res.json(surveyData);
+    app.get("/data/friends", function (req, res) {
+        res.json(friends);
     });
 
 
 
-    app.post("../data/friends.js", function () {
-        surveyArray = [];
+    app.post("/data/friends", function (req, res) {
+        var userInput = req.body;
+        // console.log(userInput);
+        var userResponse = userInput.scores;
+        // console.log(userResponse);
 
-        console.log(surveyData);
+        friends.push(userInput);
+        res.json(userInput);
+
+
     });
 };
 
