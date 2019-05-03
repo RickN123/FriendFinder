@@ -1,4 +1,4 @@
-var surveyData = require("../data/friends");
+var surveyData = require("../data/friends.js");
 var express = require("express");
 var path = require("path");
 var app = express();
@@ -14,7 +14,7 @@ module.exports = function (app) {
 
 
 
-    app.post("/api/clear", function () {
+    app.post("../data/friends.js", function () {
         surveyArray = [];
 
         console.log(surveyData);
