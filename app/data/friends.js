@@ -1,4 +1,4 @@
-var newfriend = [
+var friends = [
 
     {
         Name: "Johnny Appleseed",
@@ -18,4 +18,4 @@ var newfriend = [
     }
 ];
 
-module.exports = newfriend;
+module.exports = friends;

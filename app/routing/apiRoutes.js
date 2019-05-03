@@ -1,4 +1,8 @@
-var sureyData = require("../data/friends");
+var surveyData = require("../data/friends");
+var express = require("express");
+var path = require("path");
+var app = express();
+
 
 
 
