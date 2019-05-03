@@ -3,18 +3,19 @@ var newfriend = [
     {
         Name: "Johnny Appleseed",
         Image: "image.img",
-        Q1: "3",
-        Q2: "4",
-        Q3: "3",
-        Q4: "5",
-        Q5: "1",
-        Q6: "2",
-        Q7: "4",
-        Q8: "4",
-        Q9: "3",
-        Q10: "3"
-
+        scores: [
+            "3",
+            "4",
+            "3",
+            "5",
+            "1",
+            "2",
+            "4",
+            "4",
+            "3",
+            "3"
+        ]
     }
 ];
 
-module.exports = newfriend
+module.exports = newfriend;

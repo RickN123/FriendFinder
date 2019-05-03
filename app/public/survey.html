@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Friend Finder</title>
-    <!-- Latest compiled and minified CSS & JS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -156,10 +156,11 @@
             <br>
 
 
-            <button type="submit" id="add-btn" class="btn btn-primary">Submit</button>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
+    <div class="modal" id="MatchModal"></div>
 
     <footer class="footer">
         <div class="container">
@@ -173,22 +174,36 @@
     </div>
     <script type="text/javascript">
 
-        $("#add-btn").on("click", function (event) {
+        $("#submit").on("click", function (event) {
             event.preventDefault();
 
             var newFriend = {
                 name: $("#name").val().trim(),
                 image: $("#image").val().trim(),
-                Q1: $("#unique-id").val().trim(),
-                Q2: $("#unique-id").val().trim()
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+
             };
 
-            $.post("/api/survey", newFriend)
+            console.log(newFriend);
+
+            $.post("/api/friends", newFriend, function (data) {
                 .then(function (data) {
 
-                    alert("New Friend Added!");
+                alert("New Friend Added!");
+            }
+         });
 
-                }
 
     </script>
 
