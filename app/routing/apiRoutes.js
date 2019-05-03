@@ -1,26 +1,11 @@
-var surveyArray = [
-    {
-        Name: "",
-        Image: "",
-        Q1: "",
-        Q2: "",
-        Q3: "",
-        Q4: "",
-        Q5: "",
-        Q6: "",
-        Q7: "",
-        Q8: "",
-        Q9: "",
-        Q10: ""
+var sureyData = require("../data/friends");
 
-    }
-];
 
 
 
 module.exports = function (app) {
     app.get("/api/survey", function (req, res) {
-        res.json(surveyArray);
+        res.json(surveyData);
     });
 
 
@@ -28,6 +13,22 @@ module.exports = function (app) {
     app.post("/api/clear", function () {
         surveyArray = [];
 
-        console.log(surveyArray);
+        console.log(surveyData);
     });
 };
+
+
+// var surveyArray = [
+//     {
+//         Name: "",
+//         Image: "",
+//         Q1: "",
+//         Q2: "",
+//         Q3: "",
+//         Q4: "",
+//         Q5: "",
+//         Q6: "",
+//         Q7: "",
+//         Q8: "",
+//         Q9: "",
+//         Q10: ""
